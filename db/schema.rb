@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_06_07_005918) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "description"
-    t.date "date"
-    t.time "time"
+    t.date "date", default: "2019-06-07"
+    t.time "time", default: "2000-01-01 13:33:04"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -33,8 +33,6 @@ ActiveRecord::Schema.define(version: 2019_06_07_005918) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
