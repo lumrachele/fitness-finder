@@ -15,7 +15,17 @@
   #   t.datetime "created_at", null: false
   #   t.datetime "updated_at", null: false
   # end
-  Event.create(title: "boxing", description: "a hardcore boxing workout to get your body moving!")
+
+  def getCurrentDate
+    Time.now().strftime("%Y-%m-%d")
+  end
+
+  def getCurrentTime
+    Time.now(Time.now().strftime("%Y")).strftime("%H:%M")
+  end
+
+
+  Event.create(title: "boxing", description: "a hardcore boxing workout to get your body moving!", date: getCurrentDate, time: getCurrentTime)
   #
   #
   # create_table "users", force: :cascade do |t|
