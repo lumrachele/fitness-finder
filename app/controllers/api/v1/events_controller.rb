@@ -1,9 +1,28 @@
 class Api::V1::EventsController < ApplicationController
 
+  def index
+    @events = Event.all
+    render json: @events, status: :ok
+  end
+
   def create
     @event = Event.create(title: params[:title], description: params[:description], date: getCurrentDate, time: getCurrentTime)
+    render json: @event, status: :ok
+  end
 
-    render json: @event
+  def show
+    @event = Event.find(params[:id])
+    render json: @event, status: :ok
+  end
+
+  def update
+    @event = Event.update(event_params)
+    render json: @event, status: :ok
+  end
+
+  def destroy
+    @event = Event.find(params[:id])
+    @event.destroy
   end
 
   private
@@ -18,7 +37,7 @@ class Api::V1::EventsController < ApplicationController
   end
 
   def event_params
-    params.require(:event).permit(:title, :description)
+    params.require(:event).permit(:title, :description, :date, :time)
   end
 
 end
