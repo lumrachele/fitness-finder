@@ -21,11 +21,19 @@
   end
 
   def getCurrentTime
-    Time.now(Time.now().strftime("%Y")).strftime("%H:%M")
+    Time.now().strftime("%H:%M")
   end
 
 
   Event.create(title: "boxing", description: "a hardcore boxing workout to get your body moving!", date: getCurrentDate, time: getCurrentTime)
+  Event.create(title: "yoga", description: "stretch and strengthen your body with thoughtful movements", date: getCurrentDate, time: getCurrentTime)
+  Event.create(title: "crossfit", description: "a HIIT workout for athletes of all levels", date: getCurrentDate, time: getCurrentTime)
+  Event.create(title: "cardio dance", description: "get your heart rate up with these fun moves", date: getCurrentDate, time: getCurrentTime)
+  Event.create(title: "barry's bootcamp", description: "HIIT", date: getCurrentDate, time: getCurrentTime)
+  Event.create(title: "pilates", description: "strength and stretch", date: getCurrentDate, time: getCurrentTime)
+  Event.create(title: "lifting", description: "get strong, get gains", date: getCurrentDate, time: getCurrentTime)
+
+
   #
   #
   # create_table "users", force: :cascade do |t|
@@ -44,3 +52,5 @@
   #   t.datetime "updated_at", null: false
   # end
   Favorite.create(user_id: 1, event_id: 1)
+  Favorite.create(user_id: 1, event_id: 2)
+  Favorite.create(user_id: 1, event_id: 4)
