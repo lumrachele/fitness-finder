@@ -19,7 +19,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 
 gem 'nokogiri'
-gem 'rack', '~> 2.0.1'
+gem 'rack', '~> 2.1.4'
 gem 'rspec'
 
 # Use ActiveStorage variant
